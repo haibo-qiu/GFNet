@@ -1,0 +1,101 @@
+################################################################################
+# training parameters
+################################################################################
+train:
+  lr: 0.1                # adam learning rate
+  min_lr: 0.000001       # min(init) sgd lr
+  max_lr: 0.2            # max sgd learning rate
+  wup_epochs: 10         # warmup during first XX epochs (can be float)
+  max_epochs: 400
+  momentum: 0.9          # sgd momentum
+  lr_decay: 0.99         # learning rate decay per epoch after initial cycle (from min lr)
+  w_decay: 0.0001        # weight decay
+  batch_size: 7          # batch size per gpu
+  report_batch: 20       # every x batches, report loss
+  report_epoch: 1        # every x epochs, report validation set
+  epsilon_w: 0.001       # class weight w = 1 / (content + epsilon_w)
+  workers: 8             # number of threads to get data
+  flow: True
+  lr_step: [120, 220, 300, 360]
+  lr_factor: 0.1
+  optimizer: "sgd"       # adam or sgd
+  syncbn: False
+
+################################################################################
+# loss parameters
+################################################################################
+loss:
+  range_proj: 1.0
+  polar_proj: 1.0
+  range: 2.0
+  polar: 2.0
+  fusion: 2.0
+
+################################################################################
+# backbone parameters
+################################################################################
+backbone:
+  name: "ResNet"  
+  input_depth:
+    range: True
+    xyz: True
+    remission: True
+  dropout: 0.01
+  bn_d: 0.01
+  train: True # train backbone?
+  layers: 34       # [34, 50]
+
+################################################################################
+# dataset parameters
+################################################################################
+dataset:
+  labels: "kitti"
+  scans: "kitti"
+  max_points: 35000 # max of any scan in dataset
+  drop: True
+  drop_rate: 0.1
+  scale: True
+  scale_rate: 0.1
+  sensor:
+    name: "HDL64"
+    type: "spherical" # projective
+
+################################################################################
+# range view parameters
+################################################################################
+range:
+  max_points: 35000  # max of any scan in dataset
+  type: "spherical"  # projective
+  proj: "v1"         # ['v1', 'v2']
+  hres: True         # good
+  flip: False        # bad
+  trans: False       # good
+  rot: False         # bad
+  factor: [12, 4]    # for H, W separately
+  sensor_img_H: 32
+  sensor_img_W: 1024
+  sensor_img_means:  #range,x,y,z,signal
+    - 1.7835
+    - 0.0325
+    - -0.1707
+    - -0.0283
+    - 2.7328
+  sensor_img_stds:   #range,x,y,z,signal
+    - 9.5803
+    - 6.7944
+    - 8.1486
+    - 1.1270
+    - 17.4203
+  sensor_fov_up: 10
+  sensor_fov_down: -30
+
+################################################################################
+# polar view parameters
+################################################################################
+polar:
+  rotate_aug: True
+  flip_aug: True
+  noise_aug: True
+  fixed_volume_space: True
+  grid_size: [480, 360, 32]
+  return_test: False
