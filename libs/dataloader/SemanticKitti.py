@@ -93,8 +93,8 @@ class SemanticKitti(Dataset):
             # check all scans have labels
             if self.gt:
                 assert(len(scan_files) == len(label_files))
-            if self.knn:
-                assert(len(scan_files) == len(knn_files))
+            # if self.knn:
+            #     assert(len(scan_files) == len(knn_files))
 
             # extend list
             self.scan_files.extend(scan_files)
