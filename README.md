@@ -1,6 +1,6 @@
 # Geometric Flow Network [![arXiv](https://img.shields.io/badge/arXiv-2207.02605-b31b1b?logo=arXiv&logoColor=green)](https://arxiv.org/abs/2207.02605)
 This is the Pytorch implementation of our following paper:
->**GFNet: Geometric Flow Network for 3D Point Cloud Semantic Segmentation**
+>**[GFNet: Geometric Flow Network for 3D Point Cloud Semantic Segmentation](https://arxiv.org/abs/2207.02605)**
 ><br>*Haibo Qiu, Baosheng Yu and Dacheng Tao*<br>
 ><details><summary> <b>Abstract</b></summary>
 >
