@@ -1,4 +1,4 @@
-# GFNet [![arXiv](https://img.shields.io/badge/arXiv-2207.02605-b31b1b)](https://arxiv.org/abs/2207.02605) [![TMLR](https://img.shields.io/badge/TMLR-2022.238-blue)](https://openreview.net/forum?id=LSAAlS7Yts) [![Project](https://img.shields.io/badge/Project-Page-important)](https://haibo-qiu.github.io/projects/gfnet/)
+# GFNet [![arXiv](https://img.shields.io/badge/arXiv-2207.02605-b31b1b)](https://arxiv.org/abs/2207.02605) [![TMLR](https://img.shields.io/badge/TMLR-2022.238-blue)](https://openreview.net/forum?id=LSAAlS7Yts) [![Project](https://img.shields.io/badge/Project-Page-important)](https://haibo-qiu.github.io/GFNet/)
 This is the Pytorch implementation of our following paper:
 >**[GFNet: Geometric Flow Network for 3D Point Cloud Semantic Segmentation](https://arxiv.org/abs/2207.02605)**
 ><br>*Accepted by [TMLR](https://openreview.net/forum?id=LSAAlS7Yts), 2022*
