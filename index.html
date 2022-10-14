@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="GFNet: Geometric Flow Network for 3D Point Cloud Semantic Segmentation.">
+  <meta name="keywords" content="Geometric, Point Cloud, Semantic Segmentation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GFNet: Geometric Flow Network for 3D Point Cloud Semantic Segmentation</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/web_icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://haibo-qiu.github.io">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://github.com/microsoft/multiview-human-pose-estimation-pytorch">
+            CrossView 
+          </a>
+          <a class="navbar-item" href="https://github.com/haibo-qiu/FROM">
+            FROM 
+          </a>
+          <a class="navbar-item" href="https://github.com/haibo-qiu/SynFace">
+            SynFace
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">GFNet: Geometric Flow Network for 3D Point Cloud Semantic Segmentation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://haibo-qiu.github.io">Haibo Qiu</a>, &nbsp
+	    </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=fjzIdMQAAAAJ&hl=en">Baosheng Yu</a>, &nbsp
+	    </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=RwlJNLcAAAAJ&hl=en">Dacheng Tao</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">University of Sydney</span>
+          </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://openreview.net/forum?id=LSAAlS7Yts"
+                   class="external-link button is-normal is-rounded is-light">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>OpenReview</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2207.02605"
+                   class="external-link button is-normal is-rounded is-light">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/haibo-qiu/gfnet"
+                   class="external-link button is-normal is-rounded is-light">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+          <!-- <br> -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Transactions on Machine Learning Research, 2022</span>
+          </div>
+
+          </div>
+        </div> </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- <video id="teaser" autoplay muted loop playsinline height="100%"> -->
+      <!--   <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/teaser.mp4" -->
+      <!--           type="video/mp4"> -->
+      <!-- </video> -->
+      <img src="./static/images/Pipeline.jpg"
+           alt="Pipeline"/>
+      <h2 class="subtitle has-text-centered">
+        The overall pipeline of geometric flow network (GFNet).
+      </h2>
+      <img src="./static/images/GFM.jpg"
+           alt="GFM"/>
+      <h2 class="subtitle has-text-centered">
+        An overview of geometric flow module (GFM).
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="hero is-light is-small"> -->
+<!--   <div class="hero-body"> -->
+<!--     <div class="container"> -->
+<!--       <div id="results-carousel" class="carousel results-carousel"> -->
+<!--         <div class="item item-steve"> -->
+<!--           <video poster="" id="steve" autoplay controls muted loop playsinline height="100%"> -->
+<!--             <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/steve.mp4" -->
+<!--                     type="video/mp4"> -->
+<!--           </video> -->
+<!--         </div> -->
+<!--         <div class="item item-chair-tp"> -->
+<!--           <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%"> -->
+<!--             <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/chair-tp.mp4" -->
+<!--                     type="video/mp4"> -->
+<!--           </video> -->
+<!--         </div> -->
+<!--         <div class="item item-shiba"> -->
+<!--           <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%"> -->
+<!--             <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/shiba.mp4" -->
+<!--                     type="video/mp4"> -->
+<!--           </video> -->
+<!--         </div> -->
+<!--         <div class="item item-fullbody"> -->
+<!--           <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%"> -->
+<!--             <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/fullbody.mp4" -->
+<!--                     type="video/mp4"> -->
+<!--           </video> -->
+<!--         </div> -->
+<!--         <div class="item item-blueshirt"> -->
+<!--           <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%"> -->
+<!--             <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/blueshirt.mp4" -->
+<!--                     type="video/mp4"> -->
+<!--           </video> -->
+<!--         </div> -->
+<!--         <div class="item item-mask"> -->
+<!--           <video poster="" id="mask" autoplay controls muted loop playsinline height="100%"> -->
+<!--             <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/mask.mp4" -->
+<!--                     type="video/mp4"> -->
+<!--           </video> -->
+<!--         </div> -->
+<!--         <div class="item item-coffee"> -->
+<!--           <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%"> -->
+<!--             <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/coffee.mp4" -->
+<!--                     type="video/mp4"> -->
+<!--           </video> -->
+<!--         </div> -->
+<!--         <div class="item item-toby"> -->
+<!--           <video poster="" id="toby" autoplay controls muted loop playsinline height="100%"> -->
+<!--             <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/toby2.mp4" -->
+<!--                     type="video/mp4"> -->
+<!--           </video> -->
+<!--         </div> -->
+<!--       </div> -->
+<!--     </div> -->
+<!--   </div> -->
+<!-- </section> -->
+<!---->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-12">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+	  Point cloud semantic segmentation from projected views, such as range-view (RV) and bird's-eye-view (BEV), has been intensively investigated. Different views capture different information of point clouds and thus are complementary to each other. However, recent projection-based methods for point cloud semantic segmentation usually utilize a vanilla late fusion strategy for the predictions of different views, failing to explore the complementary information from a geometric perspective during the representation learning. 
+          </p>
+          <p>
+In this paper, we introduce a geometric flow network (GFNet) to explore the geometric correspondence between different views in an align-before-fuse manner. Specifically, we devise a novel geometric flow module (GFM) to bidirectionally align and propagate the complementary information across different views according to geometric relationships under the end-to-end learning scheme. We perform extensive experiments on two widely used benchmark datasets, SemanticKITTI and nuScenes, to demonstrate the effectiveness of our GFNet for project-based point cloud semantic segmentation. Concretely, GFNet not only significantly boosts the performance of each individual view but also achieves state-of-the-art results over all existing projection-based models.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+   <!--  <div class="columns is-centered has-text-centered"> -->
+   <!--    <div class="column is-12"> -->
+   <!--      <h2 class="title is-3">Video</h2> -->
+   <!--      <div class="publication-video"> -->
+	  <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/a1bk0OvxmNI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+   <!--      </div> -->
+   <!--    </div> -->
+   <!--  </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- <div class="columns is-centered"> -->
+    <!---->
+      <!-- Visual Effects. -->
+    <!--   <div class="column"> -->
+    <!--     <div class="content"> -->
+    <!--       <h2 class="title is-3">Visual Effects</h2> -->
+    <!--       <p> -->
+    <!--         Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect -->
+    <!--         would be impossible without nerfies since it would require going through a wall. -->
+    <!--       </p> -->
+    <!--       <video id="dollyzoom" autoplay controls muted loop playsinline height="100%"> -->
+    <!--         <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/dollyzoom-stacked.mp4" -->
+    <!--                 type="video/mp4"> -->
+    <!--       </video> -->
+    <!--     </div> -->
+    <!--   </div> -->
+      <!--/ Visual Effects. -->
+    <!---->
+      <!-- Matting. -->
+    <!--   <div class="column"> -->
+    <!--     <h2 class="title is-3">Matting</h2> -->
+    <!--     <div class="columns is-centered"> -->
+    <!--       <div class="column content"> -->
+    <!--         <p> -->
+    <!--           As a byproduct of our method, we can also solve the matting problem by ignoring -->
+    <!--           samples that fall outside of a bounding box during rendering. -->
+    <!--         </p> -->
+    <!--         <video id="matting-video" controls playsinline height="100%"> -->
+    <!--           <source src="https://homes.cs.washington.edu/~kpar/nerfies/videos/matting.mp4" -->
+    <!--                   type="video/mp4"> -->
+    <!--         </video> -->
+    <!--       </div> -->
+    <!---->
+    <!--     </div> -->
+    <!--   </div> -->
+    <!-- </div> -->
+    <!--/ Matting. -->
+
+    <!-- Visualizations. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Visualizations</h2>
+        <div class="content has-text-justified">
+          <p>
+            Here we provide some visualizations. First, we show a gif of the driving scene with RV maps; then the information flowing between RV and BEV leads to mutual help; finally the comparisons between predictions and gt are given.           
+          </p>
+        </div>
+        <!-- Interpolating. -->
+        <h3 class="title is-5">A driving scene with RV maps</h3>
+        <img src="./static/images/vis.gif"
+             alt="Gif" width="90%"/>
+        <br>
+        <br>
+        <br>
+        <h3 class="title is-5">RV and BEV help each other</h3>
+        <img src="./static/images/vis_compare.jpg"
+             alt="Pipeline" width="90%"/>
+        <p class="has-text-centered">
+          BEV helps to handle the distant occluded points caused by RV projection.
+        </p>
+        <br>
+        <img src="./static/images/vis_help.jpg"
+             alt="Pipeline" width="90%"/>
+        <p class="has-text-centered">
+          The view with the cyan contour helps the red one.
+        </p>
+        <br>
+        <br>
+        <h3 class="title is-5">Pred and GT</h3>
+        <img src="./static/images/supp_vis.jpg"
+             alt="Pipeline" width="90%"/>
+      </div>
+    </div>
+    <!--/ Visualizations. -->
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{qiu2022gfnet,
+  title={{GFN}et: Geometric Flow Network for 3D Point Cloud Semantic Segmentation},
+  author={Haibo Qiu and Baosheng Yu and Dacheng Tao},
+  journal={Transactions on Machine Learning Research},
+  year={2022},
+  url={https://openreview.net/forum?id=LSAAlS7Yts},
+}</code></pre>
+  </div>
+</section>
+
+<!-- <section class="section" id="Comments"> -->
+<!--   <div class="container is-max-desktop content"> -->
+<!-- 	<script src="https://giscus.app/client.js" -->
+<!-- 		data-repo="haibo-qiu/gfnet" -->
+<!-- 		data-repo-id="R_kgDOHjuRdQ" -->
+<!-- 		data-category="Announcements" -->
+<!-- 		data-category-id="DIC_kwDOHjuRdc4CRoqj" -->
+<!-- 		data-mapping="pathname" -->
+<!-- 		data-strict="0" -->
+<!-- 		data-reactions-enabled="1" -->
+<!-- 		data-emit-metadata="0" -->
+<!-- 		data-input-position="bottom" -->
+<!-- 		data-theme="preferred_color_scheme" -->
+<!-- 		data-lang="en" -->
+<!-- 		crossorigin="anonymous" -->
+<!-- 		async> -->
+<!-- 	</script> -->
+<!--   </div> -->
+<!-- </section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        Many thanks for the template from <a href="https://nerfies.github.io">nerfies website</a> 
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
